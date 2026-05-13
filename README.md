@@ -413,3 +413,465 @@ Build in this order:
 10. Monitoring
 
 That progression matches real enterprise development flow.
+
+# 7-Day Crash Plan — Banking Project for Dubai Bank Interviews
+
+This version is optimized for:
+
+* senior React/NodeJS interviews
+* fast execution
+* maximum interviewer impact
+* minimum unnecessary complexity
+
+Goal:
+
+> Build something that *looks enterprise-grade* in just 7 days.
+
+You are NOT building a real bank.
+
+You are building:
+
+* architecture credibility
+* production thinking
+* interview talking points
+
+---
+
+# What To SKIP
+
+Do NOT spend time on:
+
+* perfect UI
+* dozens of pages
+* full Kubernetes mastery
+* advanced DevOps
+* AI model training
+* complex cloud setup
+
+Focus only on:
+
+* architecture
+* JWT auth
+* Kafka flow
+* Redis
+* microservices structure
+* Docker
+
+That gives maximum interview value.
+
+---
+
+# Final 7-Day Project Scope
+
+You will build:
+
+✅ React frontend
+✅ Auth service
+✅ Transaction service
+✅ PostgreSQL
+✅ Kafka event flow
+✅ Fraud detection consumer
+✅ Redis cache
+✅ Docker Compose
+✅ Swagger docs
+✅ Architecture diagram
+
+This is MORE than enough to impress.
+
+---
+
+# DAY 1 — Foundation Setup
+
+## Goal
+
+Get full project structure ready.
+
+---
+
+## Create Repo Structure
+
+```text id="5wt4t7"
+banking-platform/
+ ├── frontend/
+ ├── auth-service/
+ ├── transaction-service/
+ ├── fraud-service/
+ ├── docker-compose.yml
+ └── README.md
+```
+
+---
+
+## Frontend Setup
+
+Use:
+
+* React
+* TypeScript
+* Vite
+
+Install:
+
+```bash id="vib9h7"
+npm create vite@latest frontend
+```
+
+Add:
+
+* React Router
+* Axios
+* Tailwind
+
+---
+
+## Backend Setup
+
+Create:
+
+* auth-service
+* transaction-service
+* fraud-service
+
+Use:
+
+* NodeJS
+* Express
+
+Install:
+
+```bash id="u5c31j"
+npm init -y
+```
+
+Packages:
+
+```bash id="d3y78m"
+express
+jsonwebtoken
+bcrypt
+cors
+dotenv
+pg
+kafkaJS
+redis
+swagger-ui-express
+```
+
+---
+
+# DAY 2 — Authentication + PostgreSQL
+
+## Build Auth APIs
+
+Endpoints:
+
+```http id="l3ivqa"
+POST /signup
+POST /login
+```
+
+Features:
+
+* bcrypt password hashing
+* JWT generation
+* middleware protection
+
+---
+
+## PostgreSQL Tables
+
+```sql id="bb4k06"
+users
+accounts
+transactions
+```
+
+Important:
+
+* foreign keys
+* indexes
+
+---
+
+## Frontend
+
+Build:
+
+* login page
+* dashboard skeleton
+* protected routes
+
+---
+
+# DAY 3 — Transactions Service
+
+## Build Money Transfer API
+
+Endpoint:
+
+```http id="8s0v5o"
+POST /transfer
+```
+
+Flow:
+
+1. validate JWT
+2. check balance
+3. debit sender
+4. credit receiver
+5. store transaction
+
+---
+
+## Add Swagger
+
+This gives HUGE professional value.
+
+Use:
+
+```bash id="48bb0m"
+swagger-ui-express
+```
+
+---
+
+## Add Error Handling
+
+Interviewers love:
+
+* centralized errors
+* clean responses
+
+---
+
+# DAY 4 — Kafka Integration (MOST IMPORTANT)
+
+This is the magic day.
+
+---
+
+# Install Kafka
+
+Use Docker.
+
+---
+
+## Flow
+
+```text id="rpawbx"
+Transaction Service
+       ↓
+Kafka Topic
+       ↓
+Fraud Service
+```
+
+---
+
+## Publish Event
+
+When transaction succeeds:
+
+```json id="d6rfqq"
+{
+  "transactionId": "TXN100",
+  "amount": 5000
+}
+```
+
+---
+
+## Fraud Consumer
+
+Consume event.
+
+Detect:
+
+* large transactions
+* rapid frequency
+
+Print:
+
+```text id="cdaj85"
+Potential fraud detected
+```
+
+This alone sounds enterprise-level.
+
+---
+
+# DAY 5 — Redis + Security
+
+## Redis Usage
+
+Use Redis for:
+
+* session caching
+* OTP storage
+* rate limiting
+
+---
+
+## Add Rate Limiting
+
+Protect:
+
+```http id="s1o6s0"
+POST /login
+```
+
+This becomes a GREAT interview talking point.
+
+---
+
+## Add Role-Based Access
+
+Roles:
+
+* CUSTOMER
+* ADMIN
+
+---
+
+# DAY 6 — Dockerize Everything
+
+This gives major “senior engineer” vibes.
+
+---
+
+# Create Dockerfiles
+
+For:
+
+* frontend
+* auth-service
+* transaction-service
+* fraud-service
+
+---
+
+# Docker Compose
+
+Run:
+
+* PostgreSQL
+* Kafka
+* Redis
+* all services
+
+Single command:
+
+```bash id="y0u4tx"
+docker-compose up
+```
+
+Interviewers LOVE this.
+
+---
+
+# DAY 7 — Polish + Interview Prep
+
+## Create Architecture Diagram
+
+VERY IMPORTANT.
+
+Even simple diagrams massively improve perception.
+
+---
+
+## Create README
+
+Include:
+
+* setup steps
+* architecture
+* screenshots
+* API docs
+
+---
+
+## Practice Explaining
+
+You MUST explain:
+
+* JWT flow
+* Kafka async flow
+* Redis caching
+* transaction lifecycle
+* fraud detection
+
+---
+
+# Final Architecture
+
+```text id="6xhy9r"
+React Frontend
+       ↓
+API/Auth Service
+       ↓
+Transaction Service
+       ↓
+Kafka
+   ↓        ↓
+Fraud     Notification
+Service    Service
+```
+
+---
+
+# What Makes This Project Powerful
+
+Even though simplified, it demonstrates:
+
+| Skill      | Value                |
+| ---------- | -------------------- |
+| React      | frontend engineering |
+| NodeJS     | backend APIs         |
+| PostgreSQL | relational DB        |
+| Kafka      | distributed systems  |
+| Redis      | caching              |
+| JWT        | security             |
+| Docker     | deployment           |
+| Swagger    | API professionalism  |
+
+That is already stronger than most interview projects.
+
+---
+
+# Biggest Secret
+
+Interviewers usually do NOT run your project deeply.
+
+They mainly evaluate:
+
+* architecture thinking
+* system design understanding
+* production awareness
+* communication
+
+So:
+
+> explaining the project well matters more than adding 50 features.
+
+---
+
+# Best “Senior-Level” Interview Line
+
+Say:
+
+> “The system follows an event-driven architecture where transaction events are asynchronously processed through Kafka for fraud analysis and downstream processing.”
+
+That sounds like real enterprise engineering.
+
+---
+
+# Strong GitHub Bonus
+
+Add:
+
+* architecture.png
+* sequence diagram
+* Swagger screenshots
+
+Your GitHub instantly looks much more senior-level.
+
